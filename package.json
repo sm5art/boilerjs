@@ -1,0 +1,26 @@
+{
+  "name": "boilerjs",
+  "version": "1.0.0",
+  "description": "boilerjs is a boilerplate for express, react, mongodb, and passport",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "body-parser": "^1.15.0",
+    "node-jsx": "^0.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sm5art/boilerjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sm5art/boilerjs/issues"
+  },
+  "homepage": "https://github.com/sm5art/boilerjs#readme"
+}
