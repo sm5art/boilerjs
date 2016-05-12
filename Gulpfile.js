@@ -4,7 +4,7 @@ var concat = require('gulp-concat');
 
 gulp.task('scripts', function () {
 
-    gulp.src(['react_client_scripts/*.js'])
+    gulp.src(['client/*.js'])
         .pipe(browserify({
             debug: true,
             transform: [ 'reactify' ]
