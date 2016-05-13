@@ -3,8 +3,11 @@ path = require('path'),
 app = express(),
 port = 1234,
 bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
-require('node-jsx').install();
+mongoose.connect('mongodb://localhost/norum');
+
+//require('node-jsx').install();
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
