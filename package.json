@@ -1,5 +1,5 @@
 {
-  "name": "boilerjs",
+  "name": "boiler-js",
   "version": "1.0.0",
   "description": "boilerjs is a boilerplate for express, react, mongodb, and passport",
   "dependencies": {
