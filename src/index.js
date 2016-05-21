@@ -3,7 +3,8 @@ const log = console.log;
 
 
 
-import { copySync as copy, readFile as read, writeFile as write } from 'fs-extra';
+import { copy as copy} from 'fs-extra';
+import { readFile as read, writeFile as write } from 'fs';
 import path from 'path';
 import prompt from 'prompt';
 import 'colors';
@@ -20,23 +21,27 @@ prompt.get({ name: 'name', description: 'Application Name'.blue, required: true 
 		const dir = path.resolve(res.dir);
 		try {
 			log('Copying...'.green);
-			copy(serverdir, dir);
-			log('Populating...'.green);
-			const package = serverdir + "/package.json";
-			read(package,(e,f)=>{
-				if(e)
-					throw e;
-				let x = JSON.loads(f);
-				x.name = name;
-				write(package,JSON.parse(x),(err)=>{
-					if(err)
-						throw err;
+			copy(serverdir, dir,(err)=>{
+				if(err)
+					throw err;
+				const packagenam = dir + "/package.json";
+				read(packagenam,(e,f)=>{
+					if(e)
+						throw e;
+					let x = JSON.parse(f);
+					log(x);
+					x.name = name;
+					write(packagenam,JSON.stringify(x),(err)=>{
+						if(err)
+							throw err;
+						process.exit(0);
+					});
 				});
 			});
+			log('Populating...'.green);
 			log('Done.'.magenta);
 		} catch (err) {
 			log('Error: '.red + err);
 		}
-		process.exit(0);
 	});
 });
