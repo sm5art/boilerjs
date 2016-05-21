@@ -29,7 +29,6 @@ prompt.get({ name: 'name', description: 'Application Name'.blue, required: true 
 					if(e)
 						throw e;
 					let x = JSON.parse(f);
-					log(x);
 					x.name = name;
 					write(packagenam,JSON.stringify(x),(err)=>{
 						if(err)
