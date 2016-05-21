@@ -12,3 +12,9 @@ gulp.task('default', function () {
   .pipe(uglify())
   .pipe(gulp.dest('public/js'))
 });
+
+gulp.task('lib', () =>
+	gulp.src('./src/*')
+		.pipe(babel({presets:['es2015']}))
+		.pipe(gulp.dest('./lib'))
+);
